@@ -1,0 +1,106 @@
+[project]
+name = "geckopy"
+version = "0.0.1+cellbauhaus.1"
+description = "Enzyme Constraint genome-scale models"
+readme = "README.rst"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+keywords = [
+    "python",
+    "metabolic-models",
+    "bioinformatics",
+    "systems-biology",
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+numpy = "*"
+pandas = "*"
+tqdm = "*"
+requests = "*"
+cobra = ">=0.29,<0.30"
+
+[tool.pixi.pypi-dependencies]
+geckopy = { path = ".", editable = true }
+
+[tool.pixi.feature.test.dependencies]
+pytest = "*"
+mypy = ">1.11.2,<2"
+ruff = "*"
+
+[tool.pixi.feature.dev.dependencies]
+pixi-pycharm = ">=0.0.6,<0.0.7"
+ipython = ">8.0.0"
+ipykernel = ">=6.29.5,<7"
+pip = ">=24.3.1,<25"
+jupyterlab = ">=4.3.2,<5"
+pixi-kernel = ">=0.6.1,<0.7"
+
+[tool.pixi.feature.dev.tasks]
+vscode-term = "ipython --no-autoindent -c \"import IPython; ipython = IPython.get_ipython(); ipython.run_line_magic('load_ext', 'autoreload'); ipython.run_line_magic('autoreload', '2')\" -i"
+
+[tool.pixi.feature.dev.pypi-dependencies]
+MonkeyType = "*"
+
+[tool.pixi.feature.test.tasks]
+test = "pytest tests"
+lint = "ruff check geckopy"
+typing = "mypy geckopy"
+style = { depends-on = ["lint", "typing"]}
+pre-commit = {depends-on = ["style", "test"]}
+
+[tool.pixi.environments]
+default = { features = [], solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+dev = { features = ["dev", "test"], solve-group = "default" }
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pixi",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+preview = true
+select = ["E", "F", "B", "N"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.mypy]
+ignore_missing_imports = true
