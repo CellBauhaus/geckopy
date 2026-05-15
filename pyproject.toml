@@ -11,7 +11,13 @@ keywords = [
     "bioinformatics",
     "systems-biology",
 ]
-dependencies = []
+dependencies = [
+    "cobra>=0.29,<0.30",
+    "pandas",
+    "numpy",
+    "tqdm",
+    "requests",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
