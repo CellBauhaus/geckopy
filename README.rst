@@ -22,13 +22,7 @@ Install
 
 .. code-block:: shell
 
-   pip install "git+https://github.com/CellBauhaus/geckopy.git@v0.0.1+cellbauhaus.1"
-
-Or pin a specific commit:
-
-.. code-block:: shell
-
-   pip install "git+https://github.com/CellBauhaus/geckopy.git@<sha>"
+   pip install "git+https://github.com/CellBauhaus/geckopy.git"
 
 ..
 
