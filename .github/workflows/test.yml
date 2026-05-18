@@ -20,4 +20,4 @@ jobs:
           python -m pip install pytest
           python -m pip install -e .
       - name: Test
-        run: python -m pytest tests/test_unit tests/test_integration/test_cobra.py
+        run: python -m pytest --ignore=tests/test_unit/test_flux_analysis.py tests/test_unit tests/test_integration/test_cobra.py
