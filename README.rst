@@ -6,8 +6,7 @@ geckopy (CellBauhaus fork)
    :alt: CI build
 
 This is CellBauhaus's fork of `ginkgobioworks/geckopy
-<https://github.com/ginkgobioworks/geckopy>`_, maintained for use by
-`biohaus <https://github.com/CellBauhaus/biohaus>`_. The library code is
+<https://github.com/ginkgobioworks/geckopy>`_, maintained for internal use. The library code is
 unchanged from upstream; this fork only updates packaging (modern
 ``pyproject.toml``, Python 3.12) so it can be installed directly from git
 without imposing legacy dependency pins.
