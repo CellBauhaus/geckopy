@@ -1,15 +1,28 @@
-geckopy
-=======
+geckopy (CellBauhaus fork)
+==========================
 
-.. image:: https://github.com/ginkgobioworks/geckopy/actions/workflows/main.yml/badge.svg
-   :target: https://github.com/ginkgobioworks/geckopy/actions
+.. image:: https://github.com/CellBauhaus/geckopy/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/CellBauhaus/geckopy/actions
    :alt: CI build
 
-**G**\ enome-scale model **E**\ nzyme **C**\ onstraints, using **K**\ inetics and 
+This is CellBauhaus's fork of `ginkgobioworks/geckopy
+<https://github.com/ginkgobioworks/geckopy>`_, maintained for internal use. The library code is
+unchanged from upstream; this fork only updates packaging (modern
+``pyproject.toml``, Python 3.12) so it can be installed directly from git
+without imposing legacy dependency pins.
+
+**G**\ enome-scale model **E**\ nzyme **C**\ onstraints, using **K**\ inetics and
 **O**\ mics in **py**\ thon.
 
 By combining kcats and proteomics measurement, geckopy allows for improving
 the modeling capabilities in genome-scale models.
+
+Install
+-------
+
+.. code-block:: shell
+
+   pip install "git+https://github.com/CellBauhaus/geckopy.git"
 
 ..
 
