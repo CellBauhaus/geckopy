@@ -1,6 +1,6 @@
 [project]
 name = "geckopy"
-version = "0.0.1+cellbauhaus.1"
+version = "2.1.0+cellbauhaus.1"
 description = "Enzyme Constraint genome-scale models"
 readme = "README.rst"
 license = { file = "LICENSE" }
